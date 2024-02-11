@@ -10,10 +10,7 @@ FROM dunglas/frankenphp:latest-php8.2
  #   zip \
  #   imagick \
  #   opcache
-ADD https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions /usr/local/bin/
 
-RUN chmod +x /usr/local/bin/install-php-extensions && \
-    install-php-extensions bcmath exif gd intl mysqli zip imagick opcache
 COPY --from=wordpress /usr/local/etc/php/conf.d/* /usr/local/etc/php/conf.d/
 COPY --from=wordpress /usr/local/bin/docker-entrypoint.sh /usr/local/bin/
 COPY --from=wordpress --chown=root:root /usr/src/wordpress /usr/src/wordpress
