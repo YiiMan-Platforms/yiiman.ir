@@ -3,11 +3,11 @@ on:
   push:
     branches:
       - "**"
-#    tags:
-#      - "v*.*.*"
-#  pull_request:
-#    branches:
-#      - "main"
+    tags:
+      - "v*.*.*"
+  pull_request:
+    branches:
+      - "main"
 concurrency:
   group: envirs-${{ github.ref }}
   cancel-in-progress: true
